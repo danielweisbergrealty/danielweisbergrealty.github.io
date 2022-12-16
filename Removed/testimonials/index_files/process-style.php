@@ -850,30 +850,30 @@ a,a:hover,a:visited,a:focus,input,input:focus,textarea,textarea:focus,select:foc
                 font-weight: 700;
              }
 
-.hp-testimonials {
+.hp-About {
     display: block;    
     background: var(--secondary-color);
     padding: 4% 0;
 }
     
-    .hp-testimonials .test-wrap {
+    .hp-About .test-wrap {
         position: relative;
     }
     
-    .hp-testimonials h2{
+    .hp-About h2{
         font-size: 25px;
         font-weight: 500;
         color: var(--primary-color);
         letter-spacing: 0.2em;
     }
 
-        .hp-testimonials .test-list {
+        .hp-About .test-list {
             width: 79%;
             margin: 0 auto;
             text-align: center;
         }
 
-            .hp-testimonials .test-list p{
+            .hp-About .test-list p{
                 color: #959595;
                 font-size: 14px;
                 line-height: 25px;                
@@ -881,7 +881,7 @@ a,a:hover,a:visited,a:focus,input,input:focus,textarea,textarea:focus,select:foc
                 padding: 30px 0;
             }
 
-            .hp-testimonials .test-list h3 {
+            .hp-About .test-list h3 {
                 font-size: 18px;
                 font-weight: 700;
                 color: #fff;
@@ -889,16 +889,16 @@ a,a:hover,a:visited,a:focus,input,input:focus,textarea,textarea:focus,select:foc
                 letter-spacing: 0.2em;
                 padding-bottom: 10px;
             }
-            .hp-testimonials .test-list a{
+            .hp-About .test-list a{
                 text-decoration: none;
             }
-            .hp-testimonials .test-list span{
+            .hp-About .test-list span{
                 font-size: 12px;
                 color: #959595;
                 display: none;
             }
 
-    .hp-testimonials .ts-next{
+    .hp-About .ts-next{
         position: absolute;
         right: 0;
         height: 100%;
@@ -910,21 +910,21 @@ a,a:hover,a:visited,a:focus,input,input:focus,textarea,textarea:focus,select:foc
         transition: all .25s ease-in-out;
 
     }
-        .hp-testimonials .ts-next:hover{
+        .hp-About .ts-next:hover{
             color: var(--primary-color);
         }
-        .hp-testimonials .ts-next:after{
+        .hp-About .ts-next:after{
             content: "";
             height: 100%;
             width: 0;
             display: inline-block;
             vertical-align: middle;             
         }
-        .hp-testimonials .ts-next span{
+        .hp-About .ts-next span{
             display: inline-block;
             vertical-align: middle;
         }
-    .hp-testimonials .ts-prev{
+    .hp-About .ts-prev{
         position: absolute;
         left: 0;
         height: 100%;
@@ -936,17 +936,17 @@ a,a:hover,a:visited,a:focus,input,input:focus,textarea,textarea:focus,select:foc
         transition: all .25s ease-in-out;
 
     }
-        .hp-testimonials .ts-prev:hover{
+        .hp-About .ts-prev:hover{
             color: var(--primary-color);
         }
-        .hp-testimonials .ts-prev:after{
+        .hp-About .ts-prev:after{
             content: "";
             height: 100%;
             width: 0;
             display: inline-block;
             vertical-align: middle;             
         }
-        .hp-testimonials .ts-prev span{
+        .hp-About .ts-prev span{
             display: inline-block;
             vertical-align: middle;
         }

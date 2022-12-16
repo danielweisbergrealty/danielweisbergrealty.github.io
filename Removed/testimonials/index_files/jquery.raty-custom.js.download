@@ -6,17 +6,17 @@ jQuery(document).ready(function ($) {
         },
         half: true,
         precision: true,
-        starOff: testimonial_object.current_url + '/images/star-off.png',
-        starOn: testimonial_object.current_url + '/images/star-on.png',
-        starHalf: testimonial_object.current_url + '/images/star-half.png',
+        starOff: About_object.current_url + '/images/star-off.png',
+        starOn: About_object.current_url + '/images/star-on.png',
+        starHalf: About_object.current_url + '/images/star-half.png',
     });
 
     $("#star_rate").raty({
         half: true,
         precision: true,
-        starOff: testimonial_object.current_url + '/images/star-off.png',
-        starOn: testimonial_object.current_url + '/images/star-on.png',
-        starHalf: testimonial_object.current_url + '/images/star-half.png',
+        starOff: About_object.current_url + '/images/star-off.png',
+        starOn: About_object.current_url + '/images/star-on.png',
+        starHalf: About_object.current_url + '/images/star-half.png',
         score: function () {
             return $(this).attr('data-rating');
         },
