@@ -1,5 +1,0 @@
-;(function($,w,d,h,b){var app={countDownTimer:function(){var _this=this;_this.setupCountDown=function(){var $countdownTimer=$('.aios-thankyou-countdown-timer');var $redirectLink=$('.aios-thankyou-link');if(!$countdownTimer.length){return false;}
-var countDownDate=new Date();countDownDate=new Date(countDownDate.getTime()+1000*7);var x=setInterval(function(){if(!$countdownTimer.is(':visible')){$countdownTimer.fadeIn();}
-var now=new Date().getTime();var distance=countDownDate-now;var seconds=Math.floor((distance%(1000*60))/1000);seconds=seconds>1?seconds+' seconds':seconds+' second';$countdownTimer.find('span').text(seconds);if(parseInt(seconds)<1){clearInterval(x);$countdownTimer.html($countdownTimer.data('timer-success'));$redirectLink.fadeIn();}},1000);}
-$(w).on('load',function(){_this.setupCountDown();});},init:function(){this.countDownTimer();}}
-$(document).ready(function(){app.init();});})(jQuery,window,document,'html','body');
