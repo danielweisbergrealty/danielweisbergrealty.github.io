@@ -452,293 +452,78 @@ button[data-target="#ihf-advanced-search-regions"] {
 <main>
 <h2 class="aios-starter-theme-hide-title">Main Content</h2>
 
-
-<section class="hp-slide">
-<h2 class="hide">slideshow</h2>
-<div tabindex="0" class="cycloneslider cycloneslider-template-responsive cycloneslider-width-full" id="cycloneslider-homepage-slidershow-auto-generated-1"> <div class="cycloneslider-slides" data-cycle-allow-wrap="true" data-cycle-delay="0" data-cycle-easing="" data-cycle-fx="fade" data-cycle-hide-non-active="true" data-cycle-log="false" data-cycle-next="#cycloneslider-homepage-slidershow-auto-generated-1 .cycloneslider-next" data-cycle-pager="#cycloneslider-homepage-slidershow-auto-generated-1 .cycloneslider-pager" data-cycle-pause-on-hover="true" data-cycle-prev="#cycloneslider-homepage-slidershow-auto-generated-1 .cycloneslider-prev" data-cycle-slides="&gt; div" data-cycle-speed="1000" data-cycle-swipe="1" data-cycle-tile-count="7" data-cycle-tile-delay="100" data-cycle-tile-vertical="true" data-cycle-timeout="4000"> <div class="cycloneslider-slide cycloneslider-slide-image"> <img class="cycloneslider-slide-js" src="wp-content/themes/agentpro-havana/cycloneslider/cyclone-slider2-responsive/images/blank.gif" width="1" height="1" alt="" title="" /> <canvas width="1600" height="640" style="background-image: url(wp-content/uploads/2016/07/slide-1.jpg)"></canvas><noscript><img src="wp-content/uploads/2016/07/slide-1.jpg" alt="" title="" /> </noscript> <div class="cycloneslider-caption"> <div class="cycloneslider-caption-title">We are passionate about finding<br />you the home of your dreams.</div> <div class="cycloneslider-caption-description"><a href="find-my-dream-home/index.html">Find My Dream Home</a></div> </div> </div> <div class="cycloneslider-slide cycloneslider-slide-image"> <img class="cycloneslider-slide-js" src="wp-content/themes/agentpro-havana/cycloneslider/cyclone-slider2-responsive/images/blank.gif" width="1" height="1" alt="" title="" /> <canvas width="1600" height="640" style="background-image: url(wp-content/uploads/2016/07/slide-2.jpg)"></canvas><noscript><img src="wp-content/uploads/2016/07/slide-2.jpg" alt="" title="" /> </noscript> <div class="cycloneslider-caption"> <div class="cycloneslider-caption-title">We are passionate about finding<br />you the home of your dreams.</div> <div class="cycloneslider-caption-description"><a href="find-my-dream-home/index.html">Find My Dream Home</a></div> </div> </div> <div class="cycloneslider-slide cycloneslider-slide-image"> <img class="cycloneslider-slide-js" src="wp-content/themes/agentpro-havana/cycloneslider/cyclone-slider2-responsive/images/blank.gif" width="1" height="1" alt="" title="" /> <canvas width="1600" height="640" style="background-image: url(wp-content/uploads/2016/07/slide-3.jpg)"></canvas><noscript><img src="wp-content/uploads/2016/07/slide-3.jpg" alt="" title="" /> </noscript> <div class="cycloneslider-caption"> <div class="cycloneslider-caption-title">We are passionate about finding<br />you the home of your dreams.</div> <div class="cycloneslider-caption-description"><a href="find-my-dream-home/index.html">Find My Dream Home</a></div> </div> </div> <div class="cycloneslider-slide cycloneslider-slide-image"> <img class="cycloneslider-slide-js" src="wp-content/themes/agentpro-havana/cycloneslider/cyclone-slider2-responsive/images/blank.gif" width="1" height="1" alt="" title="" /> <canvas width="1600" height="640" style="background-image: url(wp-content/uploads/2016/07/slide-4.jpg)"></canvas><noscript><img src="wp-content/uploads/2016/07/slide-4.jpg" alt="" title="" /> </noscript> <div class="cycloneslider-caption"> <div class="cycloneslider-caption-title">We are passionate about finding<br />you the home of your dreams.</div> <div class="cycloneslider-caption-description"><a href="find-my-dream-home/index.html">Find My Dream Home</a></div> </div> </div> <div class="cycloneslider-slide cycloneslider-slide-image"> <img class="cycloneslider-slide-js" src="wp-content/themes/agentpro-havana/cycloneslider/cyclone-slider2-responsive/images/blank.gif" width="1" height="1" alt="" title="" /> <canvas width="1600" height="640" style="background-image: url(wp-content/uploads/2016/07/slide-5.jpg)"></canvas><noscript><img src="wp-content/uploads/2016/07/slide-5.jpg" alt="" title="" /> </noscript> <div class="cycloneslider-caption"> <div class="cycloneslider-caption-title">We are passionate about finding<br />you the home of your dreams.</div> <div class="cycloneslider-caption-description"><a href="find-my-dream-home/index.html">Find My Dream Home</a></div> </div> </div> </div> <script>jQuery(document).ready( function() {	/* Define slider function */	var AIOSCycloneSliderResponsiveSlideshow = function(elem,settings) {	var that = this;	that.settings = settings;	that.slideshow = jQuery(elem).find(".cycloneslider-slides");	that.slideshowInitialized = null;	that.initialize();	that.lazyLoadImages();	};	AIOSCycloneSliderResponsiveSlideshow.prototype.initialize = function() {	var that = this;	/* Build slideshow */	that.slideshowInitialized = that.slideshow.cycle(that.settings.cycleOpts);	/* Adjust slideshow size */	if ( that.settings.widthManagement == 'fixed' ) {	that.slideshowInitialized.find(".cycloneslider-slide-js").each( function(i,v) {	var canvas = jQuery("<canvas></canvas>");	canvas.addClass("cycloneslider-slide-js");	canvas.width( that.settings.width );	canvas.height( that.settings.height );	canvas.attr("data-src",jQuery(v).attr("data-src"));	jQuery(v).after(canvas);	jQuery(v).remove();	});	}	};	AIOSCycloneSliderResponsiveSlideshow.prototype.lazyLoadImages = function() {	var that = this;	that.slideshowInitialized.on("cycle-before", function(event, optionHash, outgoingSlideEl, incomingSlideEl, forwardFlag) {	that.loadImage( jQuery(incomingSlideEl).find(".cycloneslider-slide-js") );	});	that.loadImage( that.slideshowInitialized.find(".cycle-sentinel .cycloneslider-slide-js") );	that.loadImage( that.slideshowInitialized.find(".cycloneslider-slide-image").not(".cycle-sentinel").find(".cycloneslider-slide-js") );	};	AIOSCycloneSliderResponsiveSlideshow.prototype.loadImage = function(image) {	var src = jQuery(image).attr("data-src");	if ( jQuery(image).is("canvas") ) {	jQuery(image).css("background-image","url(" + src + ")");	}	else {	jQuery(image).attr("src",src);	}	};	/* Set variables */	var settings = {	cycleOpts : {},	widthManagement : "full",	width : 1600,	height : 640	};	/* Initialize slideshow */	new AIOSCycloneSliderResponsiveSlideshow( "#cycloneslider-homepage-slidershow-auto-generated-1", settings );	});</script></div> </section>
-<section class="hp-qs">
-<h2 class="hide">quick search</h2>
+<div class="ip-banner" data-post-type="page" data-id="486">
+<canvas width="1600" height="350"></canvas>
+</div> 
+<div id="inner-page-wrapper">
 <div class="container">
-<div class="textwidget custom-html-widget"><div class="row">
-<div class="col-md-12">
-<p style="color: red;
-    padding: 0 40px 24px 40px;
-    font-size: 18px; text-align:center">
-For Demo Only
-</p>
+<div id="content-sidebar">
+<article id="content" class="hfeed">
+<p id="breadcrumbs"><span><span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" href="https://ap-havana.agentimage.com/"><span property="name">Home</span></a><meta property="position" content="1"></span> » <span class="breadcrumb_last" property="itemListElement" typeof="ListItem"><span property="name">About</span><meta property="position" content="2"></span></span></p>
+<div id="post-486" class="post-486 page type-page status-publish hentry">
+<h1 class="entry-title">About</h1>
+<div class="entry entry-content">
+<p>Victor Jones not only represents homebuyers in Auburn, he lives there. That gives his a decided advantage over other agents who live in other parts of Auburn. His knowledge and experience when it comes to buying and selling real estate in Auburn is simply unmatched.</p>
+<p>His thorough familiarity and knowledge of Auburn’s communities, neighborhoods, and local attractions helps his match his clients with the right home for them. Victor Jones is able to give his clients detailed information about the pluses and minuses of each area. Plus, as a certified relocation expert, he stays on top of the latest changes and trends in both the local and national real estate markets.</p>
+<p>His educational background, combined with his many years of experience, is what makes his a trusted agent. His professionalism, winning personality, and personalized service are just what buyers need to find the homes of their dreams.</p>
+<p>In the course of five years he has earned his reputation as a driven agent who gives his clients a smooth and stress-free home buying and selling experience. He understands that every client is different and will work tirelessly to help them achieve their real estate goals. There is no one-size-fits-all method for representing his clients in their real estate transactions.</p>
+<p>Part of what sets his apart from his competitors is his ability to listen carefully to the unique needs, desires, and goals of each of his clients. It is the personal approach borne out of that deep understanding that makes his a leading agent in Auburn.</p>
+<div class="addtoany_share_save_container addtoany_content addtoany_content_bottom"><div class="a2a_kit a2a_kit_size_32 addtoany_list" data-a2a-url="https://ap-havana.agentimage.com/about/" data-a2a-title="About"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fap-havana.agentimage.com%2Fabout%2F&amp;linkname=About" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fap-havana.agentimage.com%2Fabout%2F&amp;linkname=About" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Fap-havana.agentimage.com%2Fabout%2F&amp;linkname=About" title="Email" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a></div></div>
 </div>
+<div class="comments-template"></div>
 </div>
-<div class="row">
-<div class="col-md-1">
-<span class="ai-magnifying-glass-g"></span>
+</article>
+<aside class="sidebar">
+<div id="custom_html-12" class="widget_text widget-set widget_custom_html"><div class="textwidget custom-html-widget"><img src="../wp-content/themes/agentpro-havana/images/realtor.jpg" alt="Victor Jones " class="img-responsive">
+<div class="side-smi text-center">
+<a href="https://www.facebook.com/AgentImage/" target="_blank" class="ai-facebook" rel="noopener noreferrer">
+<em class="hide">Facebook</em>
+</a>
+<a href="https://twitter.com/agentimage/" target="_blank" class="ai-twitter" rel="noopener noreferrer">
+<em class="hide">Twitter</em>
+</a>
+<a href="https://www.youtube.com/channel/UCi61s5-PpJSTqVMy-ed92XA" target="_blank" class="ai-youtube" rel="noopener noreferrer">
+<em class="ai-hide">Youtube</em>
+</a>
+<a href="https://www.linkedin.com/company/agent-image/" target="_blank" class="ai-linkedin" rel="noopener noreferrer">
+<em class="ai-hide">Linkedin</em>
+</a>
+<a href="https://www.instagram.com/agentimage/" target="_blank" class="ai-instagram" rel="noopener noreferrer">
+<em class="ai-hide">Instagram</em>
+</a>
 </div>
-<div class="col-md-11">
-<form action="#" method="get">
-<div class="qs-col wide">
-<select name="qs-PropType" id="qs-PropType" class="qc-long" aria-label="Property Type">
-<option selected="" value="">Property Type</option>
-</select>
+<div class="side-contact text-center">
+<div class="hdr-phone">
+<span class="ai-phone-o"></span> <a href="tel:+1.123.456.7890">123.456.7890</a>
 </div>
-<div class="qs-col wide">
-<input type="text" placeholder="City or ZIP" aria-label="City">
+<div class="hdr-email">
+<span class="ai-envelope-o"></span><a class="asis-mailto-obfuscated-email " data-value="agent(at)agentimage(dotted)com" href="#">agent(at)agentimage(dotted)com</a>
 </div>
-<div class="qs-col">
-<select name="qs-Beds" id="qs-Beds" aria-label="Bedrooms">
-<option selected="" value="">Bedrooms</option>
-</select>
-</div>
-<div class="qs-col mar-l">
-<select name="qs-Baths" id="qs-Baths" aria-label="Bathrooms">
-<option selected="" value="">Bathrooms</option>
-</select>
-</div>
-<div class="qs-col">
-<input placeholder="Min Price" aria-label="MinPrice">
-</div>
-<div class="qs-col mar-l">
-<input placeholder="Max Price" aria-label="MaxPrice">
-</div>
-<input type="submit" value="Search">
-</form>
-</div>
-</div></div> </div>
-</section>
-<section class="hp-welcome">
-<div class="container">
-<div class="textwidget custom-html-widget"><div class="row">
-<div class="col-md-7 welcome-text">
-<h1>Welcome To
-<span>Victor Jones Real Estate</span></h1>
-<p>It is with great pleasure that Victor Jones welcomes you to Auburn, and to his website. With years of experience in the market, he knows how crucial it is for you to find relevant, up-to-date information. The search is over. His website is designed to be your one-stop shop for real estate in Auburn.</p>
-<p>This is the moment that you should enjoy the most; looking at the available properties in Auburn; imagining yourself living in the home that you have always dreamed about. You don’t want just another database that gives you rehashed property descriptions. You want to walk around the neighborhood from the comfort of your own home. You want to get a clear picture about life in Auburn.</p>
-</div>
-<div class="col-md-4 col-md-offset-1 welcome-img">
-<img src="wp-content/themes/agentpro-havana/images/realtor.jpg" alt="Victor Jones " class="img-responsive">
-</div>
- </div></div> </div>
-</section>
-<section class="hp-cta">
-<h2 class="hide">cta</h2>
-<div class="container">
-<div class="textwidget custom-html-widget"><div class="row">
-<div class="cta-list col-md-4">
+</div></div></div><div id="custom_html-13" class="widget_text widget-set widget_custom_html"><div class="textwidget custom-html-widget"><div class="side-cta">
 <a href="find-my-dream-home/index.html">
 <span>
-Find My Dream Home
+Find My<br />Dream Home
 <em class="ai-house"></em>
 </span>
 </a>
-</div>
-<div class="cta-list col-md-4">
 <a href="what-is-my-home-worth/index.html">
 <span>
-What's My Home Worth?
+What's My<br />Home Worth?
 <em class="ai-dollar-o"></em>
 </span>
 </a>
-</div>
-<div class="cta-list col-md-4">
 <a href="help-me-relocate/index.html">
 <span>
-Help Me Relocate
+Help Me<br />Relocate
 <em class="ai-location-a"></em>
-</span>
+ </span>
 </a>
+</div></div></div> <div class="clear"></div>
+</aside>
 </div>
-</div></div> </div>
-</section>
-<section class="properties-area">
-<div class="container">
-<div class="row">
-<div class="col-md-6 hp-fp">
-<div class="textwidget custom-html-widget"><h2>Featured Properties</h2>
-<div class="fp-list-holder">
-<div class="fp-list">
-<div class="fp-item">
-<a href="listing/4473-greenview-drive-el-dorado-hills-ca-9576/index.html">
-<canvas width="279" height="276" style="background-image: url(wp-content/uploads/2020/07/4048e53d-d491-46fe-9d4a-802a82116462-768x544.jpg)"></canvas>
-<div class="fp-details">
-<div>
-<p>4473 Greenview Drive, El Dorado Hills, , California CA 9576</p>
-<strong>$5,495,000</strong>
+<div class="clearfix"></div>
 </div>
 </div>
-</a>
-</div>
-<div class="fp-item">
-<a href="listing/2055-sand-point-discovery-bay-ca-94505/index.html">
-<canvas width="279" height="276" style="background-image: url(wp-content/uploads/2020/07/4c2fc696-980e-4523-8084-d4a686141694-374x264.jpg)"></canvas>
-<div class="fp-details">
-<div>
-<p>2055 Sand Point, Discovery Bay, California 94505</p>
-<strong>$415,000</strong>
-</div>
-</div>
-</a>
-</div>
-<div class="fp-item">
-<a href="listing/7820-old-auburn-road-citrus-heights-ca-95610/index.html">
-<canvas width="279" height="276" style="background-image: url(wp-content/uploads/2020/07/1067e886-1db5-4c25-84c9-50f6d9608e0c-374x264.jpg)"></canvas>
-<div class="fp-details">
-<div>
-<p>7820 Old Auburn Road, Citrus Heights, California 95610</p>
-<strong>$950,000</strong>
-</div>
-</div>
-</a>
-</div>
-<div class="fp-item">
-<a href="listing/5900-samhill-mine-court-el-dorado-ca-95623/index.html">
-<canvas width="279" height="276" style="background-image: url(wp-content/uploads/2020/07/5306174d-77db-4d76-9fe3-40e8185b4969-374x264.jpg)"></canvas>
-<div class="fp-details">
-<div>
-<p>5900 Samhill Mine Court, El Dorado, California 95623</p>
-<strong>$1,350,000</strong>
-</div>
-</div>
-</a>
-</div>
-</div>
-</div></div> </div>
-<div class="col-md-6 hp-fc">
-<h2>Featured Communities</h2>
-<div class="fc-list-holder">
-<div class="fc-list">
-<div class="fc-item">
-<a href="communities/auburn/index.html">
-<canvas width="279" height="276" style="background-image: url(wp-content/uploads/2020/06/ip-communities-1.jpg)"></canvas>
-<div class="fc-details">
-<div>
-<p>Auburn</p>
-</div>
-</div>
-</a>
-</div>
-<div class="fc-item">
-<a href="communities/el-dorado-hills/index.html">
-<canvas width="279" height="276" style="background-image: url(wp-content/uploads/2020/02/ip-communities-6.jpg)"></canvas>
-<div class="fc-details">
-<div>
-<p>El Dorado Hills</p>
-</div>
-</div>
-</a>
-</div>
-<div class="fc-item">
-<a href="communities/el-dorado/index.html">
-<canvas width="279" height="276" style="background-image: url(wp-content/uploads/2020/02/ip-communities-5.jpg)"></canvas>
-<div class="fc-details">
-<div>
-<p>El Dorado</p>
-</div>
-</div>
-</a>
-</div>
-<div class="fc-item">
-<a href="communities/discovery-bay/index.html">
-<canvas width="279" height="276" style="background-image: url(wp-content/uploads/2020/02/ip-communities-4.jpg)"></canvas>
-<div class="fc-details">
-<div>
-<p>Discovery Bay</p>
-</div>
-</div>
-</a>
-</div>
-<div class="fc-item">
-<a href="communities/citrus-heights/index.html">
-<canvas width="279" height="276" style="background-image: url(wp-content/uploads/2020/02/ip-communities-3.jpg)"></canvas>
-<div class="fc-details">
-<div>
-<p>Citrus Heights</p>
-</div>
-</div>
-</a>
-</div>
-</div>
-</div> </div>
-</div>
-</div>
-</section>
-<section class="hp-testimonials">
-<div class="container">
-<div class="textwidget custom-html-widget"><div class="test-wrap">
-<div class="ts-next slick-arrow"><span><em class="ai-arrow-a-n"></em></span></div>
-<div class="ts-prev slick-arrow"><span><em class="ai-arrow-a-p"></em></span></div>
-<h2 class="text-uppercase text-center">Testimonials</h2>
-<div class="test-list">
-<div>
-<p>We never really believed in so-called real estate experts until we were introduced to Victor Jones. Like magicians, they made all of our dreams come true. Aside from being professional and experienced, Victor Jones proved to be very patient, creative, and persistent. They always accommodated our requests and questions. What a great real estate team!</p>
-<h3>Bryan Cooper</h3>
-</div>
-<div>
-<p>We can’t thank Victor Jones enough for helping us find our dream home in Auburn. It’s exactly what we dreamed it would be – and we didn’t go over our budget! Victor Jones local market knowledge, expertise, and amazing dedication made the whole buying process truly enjoyable. Thank you so much, Victor Jones.</p>
-<h3>Beverly Ray</h3>
-</div>
-<div>
-<p>We can’t thank Victor Jones enough for helping us find our dream home in Auburn. It’s exactly what we dreamed it would be – and we didn’t go over our budget! Victor Jones local market knowledge, expertise, and amazing dedication made the whole buying process truly enjoyable. Thank you so much, Victor Jones.</p>
-<h3>Roger Russo</h3>
-</div>
-<div>
-<p>We can’t thank Victor Jones enough for helping us find our dream home in Auburn. It’s exactly what we dreamed it would be – and we didn’t go over our budget! Victor Jones local market knowledge, expertise, and amazing dedication made the whole buying process truly enjoyable. Thank you so much, Victor Jones.</p>
-<h3>Kendra Keller</h3>
-</div>
-<div>
-<p>We can’t thank Victor Jones enough for helping us find our dream home in Auburn. It’s exactly what we dreamed it would be – and we didn’t go over our budget! Victor Jones local market knowledge, expertise, and amazing dedication made the whole buying process truly enjoyable. Thank you so much, Victor Jones.</p>
-<h3>Jessica Royce</h3>
-</div>
-<div>
-<p>We never really believed in so-called real estate experts until we were introduced to Victor Jones. Like magicians, they made all of our dreams come true. Aside from being professional and experienced, Victor Jones proved to be very patient, creative, and persistent. They always accommodated our requests and questions. What a great real estate team!</p>
-<h3>Debra Miller</h3>
-</div>
-<div>
-<p>We can’t thank Victor Jones enough for helping us find our dream home in Auburn. It’s exactly what we dreamed it would be – and we didn’t go over our budget! Victor Jones local market knowledge, expertise, and amazing dedication made the whole buying process truly enjoyable. Thank you so much, Victor Jones.</p>
-<h3>Jane Forster</h3>
-</div>
-</div>
-</div></div> </div>
-</section>
-<section class="hp-blog-area">
-<div class="container">
-<div class="row">
-<div class="col-md-8 hp-blog">
-<h2 class="text-uppercase">Latest Posts <em class="ai-document-a"></em></h2>
-<div class="blog-list">
-<div class="blog-item">
-<div class="blog-photo">
-<img src="wp-content/uploads/2020/02/Remodeling-Projects-That-Will-Boost-Your-Homes-Value.jpg" alt="Remodeling Projects That Will Boost Your Home’s Value">
-</div>
-<div class="blog-content">
-<h3>Remodeling Projects That Will Boost Your Home’s Value</h3>
-<p>There are two ways to think about remodeling projects that will boost your home’s value; you can get one or two major remodels done or opt for a bunch of... </p>
-<a href="blog/remodeling-projects-that-will-boost-your-homes-value/index.html">Read More »</a>
-</div>
-</div>
-<div class="blog-item">
-<div class="blog-photo">
-<img src="wp-content/uploads/2020/02/Signs-that-Now-is-the-Time-to-Sell-Your-Home.jpg" alt="Signs that Now is the Time to Sell Your Home">
-</div>
-<div class="blog-content">
-<h3>Signs that Now is the Time to Sell Your Home</h3>
-<p>There are many reasons why it may be time to sell your home. You may need more space to make room for a growing family or you need to downsize... </p>
-<a href="blog/signs-that-now-is-the-time-to-sell-your-home/index.html">Read More »</a>
-</div>
-</div>
-</div> </div>
-<div class="col-md-4 hp-areas">
-<div class="textwidget custom-html-widget"><h2 class="text-uppercase">Areas Of Expertise <em class="ai-location"></em></h2>
-<div class="areas-wrap">
-<ul>
-<li><a href="communities/auburn/index.html">Auburn</a></li>
-<li><a href="communities/cameron-park/index.html">Cameron Park</a></li>
-<li><a href="communities/citrus-heights/index.html">Citrus Heights</a></li>
-<li><a href="communities/discovery-bay/index.html">Discovery Bay</a></li>
-<li><a href="communities/el-dorado/index.html">El Dorado</a></li>
-<li><a href="communities/el-dorado-hills/index.html">El Dorado Hills</a></li>
-</ul>
-</div></div> </div>
-</div>
-</div>
-</section>
 </main>
 <footer class="footer">
 <div class="container">
@@ -861,3 +646,4 @@ jQuery(document).ready( function() {
 
 <!-- Mirrored from ap-havana.agentimage.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 30 Oct 2022 22:29:38 GMT -->
 </html>
+
