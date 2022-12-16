@@ -452,11 +452,67 @@ button[data-target="#ihf-advanced-search-regions"] {
 <main>
 <h2 class="aios-starter-theme-hide-title">Main Content</h2>
 
+<style type="text/css">
+.imgHeightScreen {
+    
+    overflow: auto;
+}
+</style>
 
 <section class="hp-slide">
-<h2 class="hide">slideshow</h2>
-<div tabindex="0" class="cycloneslider cycloneslider-template-responsive cycloneslider-width-full" id="cycloneslider-homepage-slidershow-auto-generated-1"> <div class="cycloneslider-slides" data-cycle-allow-wrap="true" data-cycle-delay="0" data-cycle-easing="" data-cycle-fx="fade" data-cycle-hide-non-active="true" data-cycle-log="false" data-cycle-next="#cycloneslider-homepage-slidershow-auto-generated-1 .cycloneslider-next" data-cycle-pager="#cycloneslider-homepage-slidershow-auto-generated-1 .cycloneslider-pager" data-cycle-pause-on-hover="true" data-cycle-prev="#cycloneslider-homepage-slidershow-auto-generated-1 .cycloneslider-prev" data-cycle-slides="&gt; div" data-cycle-speed="1000" data-cycle-swipe="1" data-cycle-tile-count="7" data-cycle-tile-delay="100" data-cycle-tile-vertical="true" data-cycle-timeout="4000"> <div class="cycloneslider-slide cycloneslider-slide-image"> <img class="cycloneslider-slide-js" src="wp-content/themes/agentpro-havana/cycloneslider/cyclone-slider2-responsive/images/blank.gif" width="1" height="1" alt="" title="" /> <canvas width="1600" height="640" style="background-image: url(wp-content/uploads/2016/07/slide-1.jpg)"></canvas><noscript><img src="wp-content/uploads/2016/07/slide-1.jpg" alt="" title="" /> </noscript> <div class="cycloneslider-caption"> <div class="cycloneslider-caption-title">We are passionate about finding<br />you the home of your dreams.</div> <div class="cycloneslider-caption-description"><a href="find-my-dream-home/index.html">Find My Dream Home</a></div> </div> </div> <div class="cycloneslider-slide cycloneslider-slide-image"> <img class="cycloneslider-slide-js" src="wp-content/themes/agentpro-havana/cycloneslider/cyclone-slider2-responsive/images/blank.gif" width="1" height="1" alt="" title="" /> <canvas width="1600" height="640" style="background-image: url(wp-content/uploads/2016/07/slide-2.jpg)"></canvas><noscript><img src="wp-content/uploads/2016/07/slide-2.jpg" alt="" title="" /> </noscript> <div class="cycloneslider-caption"> <div class="cycloneslider-caption-title">We are passionate about finding<br />you the home of your dreams.</div> <div class="cycloneslider-caption-description"><a href="find-my-dream-home/index.html">Find My Dream Home</a></div> </div> </div> <div class="cycloneslider-slide cycloneslider-slide-image"> <img class="cycloneslider-slide-js" src="wp-content/themes/agentpro-havana/cycloneslider/cyclone-slider2-responsive/images/blank.gif" width="1" height="1" alt="" title="" /> <canvas width="1600" height="640" style="background-image: url(wp-content/uploads/2016/07/slide-3.jpg)"></canvas><noscript><img src="wp-content/uploads/2016/07/slide-3.jpg" alt="" title="" /> </noscript> <div class="cycloneslider-caption"> <div class="cycloneslider-caption-title">We are passionate about finding<br />you the home of your dreams.</div> <div class="cycloneslider-caption-description"><a href="find-my-dream-home/index.html">Find My Dream Home</a></div> </div> </div> <div class="cycloneslider-slide cycloneslider-slide-image"> <img class="cycloneslider-slide-js" src="wp-content/themes/agentpro-havana/cycloneslider/cyclone-slider2-responsive/images/blank.gif" width="1" height="1" alt="" title="" /> <canvas width="1600" height="640" style="background-image: url(wp-content/uploads/2016/07/slide-4.jpg)"></canvas><noscript><img src="wp-content/uploads/2016/07/slide-4.jpg" alt="" title="" /> </noscript> <div class="cycloneslider-caption"> <div class="cycloneslider-caption-title">We are passionate about finding<br />you the home of your dreams.</div> <div class="cycloneslider-caption-description"><a href="find-my-dream-home/index.html">Find My Dream Home</a></div> </div> </div> <div class="cycloneslider-slide cycloneslider-slide-image"> <img class="cycloneslider-slide-js" src="wp-content/themes/agentpro-havana/cycloneslider/cyclone-slider2-responsive/images/blank.gif" width="1" height="1" alt="" title="" /> <canvas width="1600" height="640" style="background-image: url(wp-content/uploads/2016/07/slide-5.jpg)"></canvas><noscript><img src="wp-content/uploads/2016/07/slide-5.jpg" alt="" title="" /> </noscript> <div class="cycloneslider-caption"> <div class="cycloneslider-caption-title">We are passionate about finding<br />you the home of your dreams.</div> <div class="cycloneslider-caption-description"><a href="find-my-dream-home/index.html">Find My Dream Home</a></div> </div> </div> </div> <script>jQuery(document).ready( function() {	/* Define slider function */	var AIOSCycloneSliderResponsiveSlideshow = function(elem,settings) {	var that = this;	that.settings = settings;	that.slideshow = jQuery(elem).find(".cycloneslider-slides");	that.slideshowInitialized = null;	that.initialize();	that.lazyLoadImages();	};	AIOSCycloneSliderResponsiveSlideshow.prototype.initialize = function() {	var that = this;	/* Build slideshow */	that.slideshowInitialized = that.slideshow.cycle(that.settings.cycleOpts);	/* Adjust slideshow size */	if ( that.settings.widthManagement == 'fixed' ) {	that.slideshowInitialized.find(".cycloneslider-slide-js").each( function(i,v) {	var canvas = jQuery("<canvas></canvas>");	canvas.addClass("cycloneslider-slide-js");	canvas.width( that.settings.width );	canvas.height( that.settings.height );	canvas.attr("data-src",jQuery(v).attr("data-src"));	jQuery(v).after(canvas);	jQuery(v).remove();	});	}	};	AIOSCycloneSliderResponsiveSlideshow.prototype.lazyLoadImages = function() {	var that = this;	that.slideshowInitialized.on("cycle-before", function(event, optionHash, outgoingSlideEl, incomingSlideEl, forwardFlag) {	that.loadImage( jQuery(incomingSlideEl).find(".cycloneslider-slide-js") );	});	that.loadImage( that.slideshowInitialized.find(".cycle-sentinel .cycloneslider-slide-js") );	that.loadImage( that.slideshowInitialized.find(".cycloneslider-slide-image").not(".cycle-sentinel").find(".cycloneslider-slide-js") );	};	AIOSCycloneSliderResponsiveSlideshow.prototype.loadImage = function(image) {	var src = jQuery(image).attr("data-src");	if ( jQuery(image).is("canvas") ) {	jQuery(image).css("background-image","url(" + src + ")");	}	else {	jQuery(image).attr("src",src);	}	};	/* Set variables */	var settings = {	cycleOpts : {},	widthManagement : "full",	width : 1600,	height : 640	};	/* Initialize slideshow */	new AIOSCycloneSliderResponsiveSlideshow( "#cycloneslider-homepage-slidershow-auto-generated-1", settings );	});</script></div> </section>
-<section class="hp-qs">
+    <h2 class="hide">slideshow</h2>
+    <div tabindex="0" class="cycloneslider cycloneslider-template-responsive cycloneslider-width-full" id="cycloneslider-homepage-slidershow-auto-generated-1" style="height: 95vh">
+       <div class="cycloneslider-slides" data-cycle-allow-wrap="true" data-cycle-delay="0" data-cycle-easing="" data-cycle-fx="fade" data-cycle-hide-non-active="true" data-cycle-log="false" data-cycle-next="#cycloneslider-homepage-slidershow-auto-generated-1 .cycloneslider-next" data-cycle-pager="#cycloneslider-homepage-slidershow-auto-generated-1 .cycloneslider-pager" data-cycle-pause-on-hover="true" data-cycle-prev="#cycloneslider-homepage-slidershow-auto-generated-1 .cycloneslider-prev" data-cycle-slides="&gt; div" data-cycle-speed="1000" data-cycle-swipe="1" data-cycle-tile-count="7" data-cycle-tile-delay="100" data-cycle-tile-vertical="true" data-cycle-timeout="4000">
+          <div class="cycloneslider-slide cycloneslider-slide-image">
+             <img class="cycloneslider-slide-js" src="wp-content/themes/agentpro-havana/cycloneslider/cyclone-slider2-responsive/images/blank.gif" width="1" height="1" alt="" title="" /> 
+             <canvas width="1600" style="background-image: url(wp-content/uploads/2016/07/slide-1.jpg); height:95vh"></canvas>
+             <noscript><img src="wp-content/uploads/2016/07/slide-1.jpg" alt="" title="" /> </noscript>
+             <div class="cycloneslider-caption">
+                <div class="cycloneslider-caption-title">We are passionate about finding<br />you the home of your dreams.</div>
+                <div class="cycloneslider-caption-description"><a href="find-my-dream-home/index.html">Find My Dream Home</a></div>
+             </div>
+          </div>
+          <div class="cycloneslider-slide cycloneslider-slide-image">
+             <img class="cycloneslider-slide-js" src="wp-content/themes/agentpro-havana/cycloneslider/cyclone-slider2-responsive/images/blank.gif" width="1" height="1" alt="" title="" /> 
+             <canvas width="1600" height="1000" style="background-image: url(wp-content/uploads/2016/07/slide-2.jpg); height:95vh"></canvas>
+             <noscript><img src="wp-content/uploads/2016/07/slide-2.jpg" alt="" title="" /> </noscript>
+             <div class="cycloneslider-caption">
+                <div class="cycloneslider-caption-title">We are passionate about finding<br />you the home of your dreams.</div>
+                <div class="cycloneslider-caption-description"><a href="find-my-dream-home/index.html">Find My Dream Home</a></div>
+             </div>
+          </div>
+          <div class="cycloneslider-slide cycloneslider-slide-image">
+             <img class="cycloneslider-slide-js" src="wp-content/themes/agentpro-havana/cycloneslider/cyclone-slider2-responsive/images/blank.gif" width="1" height="1" alt="" title="" /> 
+             <canvas width="1600" height="1000" style="background-image: url(wp-content/uploads/2016/07/slide-3.jpg); height:95vh"></canvas>
+             <noscript><img src="wp-content/uploads/2016/07/slide-3.jpg" alt="" title="" /> </noscript>
+             <div class="cycloneslider-caption">
+                <div class="cycloneslider-caption-title">We are passionate about finding<br />you the home of your dreams.</div>
+                <div class="cycloneslider-caption-description"><a href="find-my-dream-home/index.html">Find My Dream Home</a></div>
+             </div>
+          </div>
+          <div class="cycloneslider-slide cycloneslider-slide-image">
+             <img class="cycloneslider-slide-js" src="wp-content/themes/agentpro-havana/cycloneslider/cyclone-slider2-responsive/images/blank.gif" width="1" height="1" alt="" title="" /> 
+             <canvas width="1600" height="1000" style="background-image: url(wp-content/uploads/2016/07/slide-4.jpg); height:95vh"></canvas>
+             <noscript><img src="wp-content/uploads/2016/07/slide-4.jpg" alt="" title="" /> </noscript>
+             <div class="cycloneslider-caption">
+                <div class="cycloneslider-caption-title">We are passionate about finding<br />you the home of your dreams.</div>
+                <div class="cycloneslider-caption-description"><a href="find-my-dream-home/index.html">Find My Dream Home</a></div>
+             </div>
+          </div>
+          <div class="cycloneslider-slide cycloneslider-slide-image">
+             <img class="cycloneslider-slide-js" src="wp-content/themes/agentpro-havana/cycloneslider/cyclone-slider2-responsive/images/blank.gif" width="1" height="1" alt="" title="" /> 
+             <canvas width="1600" height="1000" style="background-image: url(wp-content/uploads/2016/07/slide-5.jpg); height:95vh"></canvas>
+             <noscript><img src="wp-content/uploads/2016/07/slide-5.jpg" alt="" title="" /> </noscript>
+             <div class="cycloneslider-caption">
+                <div class="cycloneslider-caption-title">We are passionate about finding<br />you the home of your dreams.</div>
+                <div class="cycloneslider-caption-description"><a href="find-my-dream-home/index.html">Find My Dream Home</a></div>
+             </div>
+          </div>
+       </div>
+       <script>jQuery(document).ready( function() {	/* Define slider function */	var AIOSCycloneSliderResponsiveSlideshow = function(elem,settings) {	var that = this;	that.settings = settings;	that.slideshow = jQuery(elem).find(".cycloneslider-slides");	that.slideshowInitialized = null;	that.initialize();	that.lazyLoadImages();	};	AIOSCycloneSliderResponsiveSlideshow.prototype.initialize = function() {	var that = this;	/* Build slideshow */	that.slideshowInitialized = that.slideshow.cycle(that.settings.cycleOpts);	/* Adjust slideshow size */	if ( that.settings.widthManagement == 'fixed' ) {	that.slideshowInitialized.find(".cycloneslider-slide-js").each( function(i,v) {	var canvas = jQuery("<canvas></canvas>");	canvas.addClass("cycloneslider-slide-js");	canvas.width( that.settings.width );	canvas.height( that.settings.height );	canvas.attr("data-src",jQuery(v).attr("data-src"));	jQuery(v).after(canvas);	jQuery(v).remove();	});	}	};	AIOSCycloneSliderResponsiveSlideshow.prototype.lazyLoadImages = function() {	var that = this;	that.slideshowInitialized.on("cycle-before", function(event, optionHash, outgoingSlideEl, incomingSlideEl, forwardFlag) {	that.loadImage( jQuery(incomingSlideEl).find(".cycloneslider-slide-js") );	});	that.loadImage( that.slideshowInitialized.find(".cycle-sentinel .cycloneslider-slide-js") );	that.loadImage( that.slideshowInitialized.find(".cycloneslider-slide-image").not(".cycle-sentinel").find(".cycloneslider-slide-js") );	};	AIOSCycloneSliderResponsiveSlideshow.prototype.loadImage = function(image) {	var src = jQuery(image).attr("data-src");	if ( jQuery(image).is("canvas") ) {	jQuery(image).css("background-image","url(" + src + ")");	}	else {	jQuery(image).attr("src",src);	}	};	/* Set variables */	var settings = {	cycleOpts : {},	widthManagement : "full",	width : 1600,	height : 640	};	/* Initialize slideshow */	new AIOSCycloneSliderResponsiveSlideshow( "#cycloneslider-homepage-slidershow-auto-generated-1", settings );	});</script>
+    </div>
+ </section>
+<!--section class="hp-qs">
 <h2 class="hide">quick search</h2>
 <div class="container">
 <div class="textwidget custom-html-widget"><div class="row">
@@ -502,7 +558,7 @@ For Demo Only
 </form>
 </div>
 </div></div> </div>
-</section>
+</section-->
 <section class="hp-welcome">
 <div class="container">
 <div class="textwidget custom-html-widget"><div class="row">
@@ -547,7 +603,7 @@ Help Me Relocate
 </div>
 </div></div> </div>
 </section>
-<section class="properties-area">
+<!--section class="properties-area">
 <div class="container">
 <div class="row">
 <div class="col-md-6 hp-fp">
@@ -696,7 +752,7 @@ Help Me Relocate
 </div>
 </div>
 </div></div> </div>
-</section>
+</section-->
 <section class="hp-blog-area">
 <div class="container">
 <div class="row">
