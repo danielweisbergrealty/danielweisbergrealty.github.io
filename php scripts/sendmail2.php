@@ -20,8 +20,8 @@ $page = $_REQUEST['pageDetails'];
 
 
 mail( "danielweisbergrealtor@gmail.com",
-    "DanielFloridaRealty site submission",
+    "danielfloridahomes site submission",
     "PageDetails: $page\nName:  $name \n Email: $email \n Phone: $phone \nAddress: $address \nCity: $preferredCity\nState: $state\nZip: $zip\nDate of Move: $approximateDateOfMove\nPreferred Method of Contact: $PreferredMethodofContact\nType of Property:$typeofproperty\nBedrooms: $minbedrooms\nBaths: $baths\nSqft: $sqft\nComments: $comments"); //Edit the email address you wish messages to be sent to
 echo('Your message was sent successfully! Will redirect you back in 3 seconds...');
-header( "refresh:3;url=http://www.danielfloridarealty.com" );
+header( "refresh:3;url=http://www.danielfloridahomes.com" );
 ?> 
